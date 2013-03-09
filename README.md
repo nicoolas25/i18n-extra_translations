@@ -33,6 +33,24 @@ Add this code, or something close, to your `(test|spec)_helper.rb` :
       ap I18n::ExtraTranslations.unused_translations
     end
 
+## Options
+
+### Set the reference locale
+
+By default extra\_translations focuses on the default locale only.
+It means that any other locale will not be used for both missing and unused translations.
+You can set the locale to use with the following code:
+
+    I18n::ExtraTranslations.locale = :fr
+
+### Unused translations for a specific file
+
+By default the file used to find unused translations is `"./config/locales/#{locale}.yml"` where `locale` is the reference locale.
+You can pass a list of filepaths to look when you call `I18n::ExtraTranslations.unused_translations`:
+
+    locale_filepaths = ['./config/locales/en.yml', './config/locales/attributes.en.yml']
+    I18n::ExtraTranslations.unused_translations(locale_filepaths)
+
 ## Credits
 
 This gem is heavily inspired by Sven Fuchs's [missing\_translation gem](https://github.com/svenfuchs/i18n-missing_translations).
