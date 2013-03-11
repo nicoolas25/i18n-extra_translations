@@ -6,7 +6,7 @@ Find missing and extra translations in an application.
 
 Add this line to your application's Gemfile:
 
-    gem 'i18n-extra_translations'
+    gem 'i18n-extra_translations', require: false
 
 And then execute:
 
