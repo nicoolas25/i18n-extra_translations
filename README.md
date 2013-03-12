@@ -18,7 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-The only usage described YET is for the test mode.
+### In development mode
+
+The library includes a Rack-compatible class that allows you to see the missing keys.
+
+In your `config/routes.rb` file or in your `config.ru` add something like this:
+
+    if Rails.env == 'development'
+      require 'i18n/extra_translations'
+      mount I18n::ExtraTranslations::Server.new => '/i18n'
+    end
 
 ### At the end of your test suite
 

@@ -5,6 +5,7 @@ module I18n
   class ExtraTranslations
     autoload :Store,           'i18n/extra_translations/store.rb'
     autoload :SimpleExtension, 'i18n/extra_translations/simple_extension.rb'
+    autoload :Server,          'i18n/extra_translations/server.rb'
 
     class << self
       attr_writer :extra_translations
