@@ -11,7 +11,7 @@ module I18n
         if mt.nil? || mt.empty?
           'No missing translations found' if mt.nil? || mt.empty?
         else
-          mt.join('\n')
+          mt.join("\n")
         end
       end
     end

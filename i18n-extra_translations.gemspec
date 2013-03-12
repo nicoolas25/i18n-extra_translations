@@ -4,7 +4,7 @@ $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.name          = 'i18n-extra_translations'
-  gem.version       = '0.0.2'
+  gem.version       = '0.0.3'
   gem.authors       = ['Nicolas ZERMATI']
   gem.email         = ['nicoolas25@gmail.com']
   gem.description   = %q{Find missing and extra translations in Rails application.}
