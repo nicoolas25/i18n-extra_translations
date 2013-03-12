@@ -29,6 +29,8 @@ In your `config/routes.rb` file or in your `config.ru` add something like this:
       mount I18n::ExtraTranslations::Server.new => '/i18n'
     end
 
+After this, check the path `/i18n` to see the missed keys.
+
 ### At the end of your test suite
 
 Add this code, or something close, to your `(test|spec)_helper.rb` :
