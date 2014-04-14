@@ -15,6 +15,10 @@ module I18n
           l    = keys.pop.to_s
           h    = keys.inject(self) { |h, k| h.key?(k.to_s) ? h[k.to_s] : (h[k.to_s] = {}) }
           h[l] = value
+        rescue
+          raise UnexpectedTranslationError.new(
+            "Check your translations arround: #{keys.join('.')}",
+            $!)
         end
     end
   end

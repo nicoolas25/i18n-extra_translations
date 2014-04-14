@@ -9,6 +9,17 @@ describe I18n::ExtraTranslations::Store do
       store.use(*args)
       store['en']['bar']['bar']['foo'].must_equal :used
     end
+
+    describe 'when the key isn\'t expected' do
+      let(:unexpected_args) { [:en, 'foo.foo', {scope: 'bar.bar'}] }
+
+      it 'raise an explicit error' do
+        store.use(*args)
+        assert_raises I18n::ExtraTranslations::UnexpectedTranslationError do
+          store.use(*unexpected_args)
+        end
+      end
+    end
   end
 
   describe '#miss' do

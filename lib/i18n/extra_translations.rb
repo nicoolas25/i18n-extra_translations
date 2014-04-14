@@ -7,6 +7,15 @@ module I18n
     autoload :SimpleExtension, 'i18n/extra_translations/simple_extension.rb'
     autoload :Server,          'i18n/extra_translations/server.rb'
 
+    class UnexpectedTranslationError < StandardError
+      attr_reader :original_exception
+
+      def initialize(message, original_exception)
+        super(message)
+        @original_exception = original_exception
+      end
+    end
+
     class << self
       attr_writer :extra_translations
       def extra_translations
